@@ -1,6 +1,10 @@
 {
   "name": "react-stateful-properties",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefvw93/react-stateful-properties.git"
+  },
   "description": "Clean and simplified local state management in React class components.",
   "main": "dist/stateful.js",
   "types": "dist/stateful.d.ts",
