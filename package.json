@@ -24,6 +24,6 @@
   "author": "Stef van Wijchen",
   "license": "ISC",
   "devDependencies": {
-    "@types/react": "^16.9.41"
+    "@types/react": "^16.9.0"
   }
 }
