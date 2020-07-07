@@ -27,7 +27,6 @@ Before:
 
 ```js
 import React from "react";
-import stateful from "react-stateful-properties";
 
 class MyComponent extends React.Component {
   state = {
