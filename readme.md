@@ -4,7 +4,7 @@ A decorator you can use to make your (ES or TypeScript) React Component class fi
 
 ## Example
 
-```
+```js
 import React from "react";
 import stateful from "react-stateful-properties";
 
@@ -25,38 +25,38 @@ Managing state in bigger React Component classes can be a tedious task that requ
 
 Before:
 
-```
+```js
 import React from "react";
 import stateful from "react-stateful-properties";
 
 class MyComponent extends React.Component {
   state = {
-    users: []
-  }
+    users: [],
+  };
 
   render() {
-    return <div>
-      {users.map(user => (
-        <div key={user.id}>
-          {user.name}
-        </div>
-      ))}
-    </div>
+    return (
+      <div>
+        {users.map((user) => (
+          <div key={user.id}>{user.name}</div>
+        ))}
+      </div>
+    );
   }
 
   componentDidMount() {
-    fetch("api/users").then(res => {
+    fetch("api/users").then((res) => {
       this.setState({
-        users: res.data
-      })
-    })
+        users: res.data,
+      });
+    });
   }
 }
 ```
 
 After:
 
-```
+```js
 import React from "react";
 import stateful from "react-stateful-properties";
 
@@ -64,17 +64,17 @@ class MyComponent extends React.Component {
   @stateful users = [];
 
   render() {
-    return <div>
-      {users.map(user => (
-        <div key={user.id}>
-          {user.name}
-        </div>
-      ))}
-    </div>
+    return (
+      <div>
+        {users.map((user) => (
+          <div key={user.id}>{user.name}</div>
+        ))}
+      </div>
+    );
   }
 
   componentDidMount() {
-    fetch("api/users").then(res => this.users = res.data)
+    fetch("api/users").then((res) => (this.users = res.data));
   }
 }
 ```
